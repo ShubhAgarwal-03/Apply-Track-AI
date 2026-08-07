@@ -68,9 +68,12 @@ export async function parseJobText(rawText: string): Promise<ParsedJob> {
   });
 
   if (!res.ok) {
-    const errText = await res.text();
-    throw new Error(`Gemini API error (${res.status}): ${errText}`);
+  const errText = await res.text();
+  if (res.status === 429) {
+    throw new Error("Gemini rate limit hit — wait a minute and try again.");
   }
+  throw new Error(`Gemini API error (${res.status}): ${errText}`);
+}
 
   const data = await res.json();
   const text: string | undefined = data?.candidates?.[0]?.content?.parts?.[0]?.text;
