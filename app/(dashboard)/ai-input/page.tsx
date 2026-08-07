@@ -21,26 +21,40 @@ export default function AiInputPage() {
     pageSize: 5,
   });
 
-  async function submit(payload: { text?: string; file?: File }) {
-    setSubmitting(true);
-    setError(null);
-    try {
-      const formData = new FormData();
-      if (payload.text) formData.set("text", payload.text);
-      if (payload.file) formData.set("file", payload.file);
+async function submit(payload: { text?: string; file?: File }) {
+  setSubmitting(true);
+  setError(null);
+  try {
+    const formData = new FormData();
+    if (payload.text) formData.set("text", payload.text);
+    if (payload.file) formData.set("file", payload.file);
 
-      const res = await fetch("/api/parse", { method: "POST", body: formData });
-      const json = await res.json();
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 9500);
 
-      if (!res.ok) throw new Error(json.error || "Failed to parse");
+    const res = await fetch("/api/parse", {
+      method: "POST",
+      body: formData,
+      signal: controller.signal,
+    });
+    clearTimeout(timeoutId);
 
-      refetch();
-      router.push(`/ai-input/review/${json.data.id}`);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Something went wrong");
-      setSubmitting(false);
-    }
+    const json = await res.json();
+    if (!res.ok) throw new Error(json.error || "Failed to parse");
+
+    refetch();
+    router.push(`/ai-input/review/${json.data.id}`);
+  } catch (err) {
+    const message =
+      err instanceof Error && err.name === "AbortError"
+        ? "This took too long — try pasting shorter text or a smaller file."
+        : err instanceof Error
+        ? err.message
+        : "Something went wrong";
+    setError(message);
+    setSubmitting(false);
   }
+}
 
   return (
     <div className="max-w-2xl">
