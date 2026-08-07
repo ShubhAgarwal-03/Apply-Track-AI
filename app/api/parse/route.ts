@@ -3,7 +3,7 @@ import { db } from "@/lib/db";
 import { applications } from "@/db/schema";
 import { parseJobText } from "@/lib/gemini";
 import { extractTextFromPdf } from "@/lib/pdf";
-import { extractTextFromImage } from "@/lib/vision";
+import { extractTextFromImage } from "@/lib/ocr"; // was: from "@/lib/vision"
 import { checkEligibility } from "@/lib/eligibility";
 
 export const runtime = "nodejs"; // pdf-parse requires the Node runtime, not edge
