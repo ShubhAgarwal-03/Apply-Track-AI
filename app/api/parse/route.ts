@@ -7,6 +7,7 @@ import { extractTextFromImage } from "@/lib/vision";
 import { checkEligibility } from "@/lib/eligibility";
 
 export const runtime = "nodejs"; // pdf-parse requires the Node runtime, not edge
+export const maxDuration = 10; // seconds — requires Vercel Pro plan; Hobby caps at 10s regardless
 
 export async function POST(req: NextRequest) {
   try {
