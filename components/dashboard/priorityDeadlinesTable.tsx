@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import type { Application } from "@/types/application";
-import { StatusBadge } from "@/components/tracker/StatusBadge";
+import { StatusBadge } from "@/components/tracker/statusBadge";
 import { getDeadlineUrgency, formatDateShort, formatDeadlineLabel } from "@/lib/deadline-utils";
 import { cn } from "@/lib/utils";
 
