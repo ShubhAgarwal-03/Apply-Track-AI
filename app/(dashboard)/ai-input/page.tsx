@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { TextPasteBox } from "@/components/ai-input/TextPasteBox";
-import { UploadDropzone } from "@/components/ai-input/UploadDropzone";
+import { TextPasteBox } from "@/components/ai-input/textPasteBox";
+import { UploadDropzone } from "@/components/ai-input/uploadDropzone";
 import { StatusBadge } from "@/components/tracker/StatusBadge";
 import { useApplications } from "@/hooks/useApplications";
 import { Sparkles } from "lucide-react";

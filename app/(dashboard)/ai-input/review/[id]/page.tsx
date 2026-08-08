@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { ExtractedFieldsForm } from "@/components/ai-input/ExtractedFieldsForm";
+import { ExtractedFieldsForm } from "@/components/ai-input/extractedFieldsForm";
 import type { Application } from "@/types/application";
 import { AlertTriangle, FileText } from "lucide-react";
 

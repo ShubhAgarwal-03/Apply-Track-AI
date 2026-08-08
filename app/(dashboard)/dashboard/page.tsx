@@ -4,9 +4,9 @@ import Link from "next/link";
 import { useState } from "react";
 import { useDashboard } from "@/hooks/useDashboard";
 import { StatCard } from "@/components/dashboard/StatCard";
-import { PriorityDeadlinesTable } from "@/components/dashboard/PriorityDeadlinesTable";
-import { RecentActivity } from "@/components/dashboard/RecentActivity";
-import { StatusBadge } from "@/components/tracker/StatusBadge";
+import { PriorityDeadlinesTable } from "@/components/dashboard/priorityDeadlinesTable";
+import { RecentActivity } from "@/components/dashboard/recentActivity";
+import { StatusBadge } from "@/components/tracker/statusBadge";
 import { formatDeadlineLabel, getDeadlineUrgency } from "@/lib/deadline-utils";
 import { cn } from "@/lib/utils";
 import {
