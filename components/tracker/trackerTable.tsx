@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import type { Application } from "@/types/application";
-import { StatusBadge } from "./StatusBadge";
-import { DeadlineBadge } from "./DeadlineBadge";
-import { ScaleBadge } from "./ScaleBadge";
+import { StatusBadge } from "./statusBadge";
+import { DeadlineBadge } from "./deadlineBadge";
+import { ScaleBadge } from "./scaleBadge";
 
 interface TrackerTableProps {
   applications: Application[];

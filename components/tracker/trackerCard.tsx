@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import type { Application } from "@/types/application";
-import { StatusBadge } from "./StatusBadge";
+import { StatusBadge } from "./statusBadge";
 import { getDeadlineUrgency, formatDeadlineLabel } from "@/lib/deadline-utils";
 
 const URGENCY_BORDER: Record<string, string> = {
