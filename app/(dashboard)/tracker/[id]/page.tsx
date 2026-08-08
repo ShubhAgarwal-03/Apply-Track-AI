@@ -4,10 +4,10 @@ import { useEffect, useState, useCallback } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import type { Application, Status } from "@/types/application";
-import { JDModal } from "@/components/tracker/JDModal";
-import { StatusSelect } from "@/components/tracker/StatusSelect";
-import { ScaleBadge } from "@/components/tracker/ScaleBadge";
-import { DeadlineBadge } from "@/components/tracker/DeadlineBadge";
+import { JDModal } from "@/components/tracker/jdModal";
+import { StatusSelect } from "@/components/tracker/statusSelect";
+import { ScaleBadge } from "@/components/tracker/scaleBadge";
+import { DeadlineBadge } from "@/components/tracker/deadlineBadge";
 import { ArrowLeft, Trash2, AlertTriangle, Save } from "lucide-react";
 
 export default function TrackerDetailPage() {
