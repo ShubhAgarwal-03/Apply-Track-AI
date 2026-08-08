@@ -3,10 +3,10 @@
 import Link from "next/link";
 import { useApplications } from "@/hooks/useApplications";
 import { useFilters } from "@/hooks/useFilters";
-import { FilterBar } from "@/components/tracker/FilterBar";
-import { SearchBar } from "@/components/tracker/SearchBar";
-import { TrackerTable } from "@/components/tracker/TrackerTable";
-import { TrackerCard } from "@/components/tracker/TrackerCard";
+import { FilterBar } from "@/components/tracker/filterBar";
+import { SearchBar } from "@/components/tracker/searchBar";
+import { TrackerTable } from "@/components/tracker/trackerTable";
+import { TrackerCard } from "@/components/tracker/trackerCard";
 import { Plus } from "lucide-react";
 import { useState } from "react";
 
